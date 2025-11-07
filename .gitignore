@@ -1,0 +1,52 @@
+# Design and reference (do not commit)
+design/
+figma/
+instructions/
+*.sketch
+*.fig
+*.xd
+
+# Dependencies and package managers
+node_modules/
+/.pnp
+.pnp.js
+yarn.lock
+package-lock.json
+npm-debug.log*
+yarn*.log
+
+# Environment and secrets
+.env
+.env.*
+.env.*.local
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Testing
+coverage/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS and misc
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.old
+*.orig
+*.patch
+*.rej
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+._
+.prettierignore
