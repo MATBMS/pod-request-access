@@ -1,0 +1,16 @@
+#logo {
+  width: 135px;
+  height: 56px;
+}
+
+.podcast-logo {
+  max-height: 17px;
+}
+
+.podcast-logo:nth-child(3) {
+  max-height: 10.67px;
+}
+
+.podcast-logo:nth-child(4) {
+  max-height: 14.9px;
+}

@@ -1,0 +1,25 @@
+button {
+  /* layout */
+  display: flex;
+  width: 303px;
+  padding: 8px var(--spacing-400);
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-100);
+  /* style */
+  border-radius: 28px;
+  background: var(--color-green);
+  box-shadow: 0 2px 4px 0 rgba(84, 230, 175, 0.14);
+  /* typography */
+  font-family: var(--font-family-regular);
+  font-size: var(--font-size-desktop-text-preset-3);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 200%;
+  color: var(--color-blue-950);
+}
+
+button:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), #54E6AF;
+  box-shadow: 0 2px 4px 0 rgba(84, 230, 175, 0.14);
+}
