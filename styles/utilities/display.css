@@ -1,0 +1,24 @@
+/* Display utilities for JavaScript interactions */
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.show-flex {
+  display: flex;
+}
+
+.show-inline {
+  display: inline;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
