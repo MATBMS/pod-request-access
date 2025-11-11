@@ -23,6 +23,8 @@
   --font-family-extra-light: 'Chivo Extra Light', sans-serif;
   --font-size-mobile-text-preset-1: 32px;
   --font-size-mobile-text-preset-2: 14px;
+  --font-size-desktop-text-preset-1: 48px;
+  --font-size-desktop-text-preset-2: 18px;
   --font-size-desktop-text-preset-3: 14px;
 }
 
@@ -54,3 +56,17 @@ p {
   line-height: 150%;
   color: var(--color-blue-300);
 }
+
+/* TABLET (768px and up) */
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-desktop-text-preset-1);
+  }
+
+  p {
+    font-size: var(--font-size-desktop-text-preset-2);
+  }
+}
+
+/* DESKTOP (1440px and up) */
+@media (min-width: 1440px) {}

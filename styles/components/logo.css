@@ -14,3 +14,21 @@
 .podcast-logo:nth-child(4) {
   max-height: 14.9px;
 }
+
+/* TABLET (768px and up) */
+@media (min-width: 768px) {
+  .podcast-logo {
+    max-height: 29px;
+  }
+
+  .podcast-logo:nth-child(3) {
+    max-height: 17px;
+  }
+
+  .podcast-logo:nth-child(4) {
+    max-height: 25px;
+  }
+}
+
+/* DESKTOP (1440px and up) */
+@media (min-width: 1440px) {}

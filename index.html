@@ -14,7 +14,9 @@
   <body>
     <main>
       <section id="main-content">
-        <img src="./icons/logo.svg" alt="Pod logo" id="logo">
+        <div class="logo-container">
+          <img src="./icons/logo.svg" alt="Pod logo" id="logo">
+        </div>
         <div class="text-content">
           <h1>Publish your podcasts <span>everywhere.</span></h1>
           <p>
@@ -28,10 +30,13 @@
           <img src="./icons/google-podcasts.svg" alt="Google Podcasts logo" class="podcast-logo">
           <img src="./icons/pocket-casts.svg" alt="Pocket Casts logo" class="podcast-logo">
         </div>
-        <form action="">
-          <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required>
-          <button type="submit">Request Access</button>
-        </form>
+        <div class="form-container">
+          <form id="request-access-form">
+            <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required>
+            <button type="submit">Request Access</button>
+          </form>
+        </div>
+        <img src="./icons/bg-pattern-dots.svg" alt="background pattern dots" id="bg-pattern-dots">
       </section>
     </main>
   </body>
