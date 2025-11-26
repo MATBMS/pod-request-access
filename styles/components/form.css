@@ -1,8 +1,13 @@
 .form-container {
+  position: relative;
+}
+
+.form-container form {
   display: flex;
   width: 100%;
+  height: 100%;
   flex-direction: column;
-  align-items: flex;
+  align-items: center;
   gap: var(--spacing-100);
 }
 
@@ -60,7 +65,7 @@ button:hover {
 
 /* TABLET (768px and up) */
 @media (min-width: 768px) {
-  .form-container {
+  .form-container form {
     /* layout */
     justify-content: center;
     /* position */
@@ -78,10 +83,14 @@ button:hover {
     /* position */
     position: absolute;
     top: 0;
-    right: 148px;
+    right: 0;
     transform: translateY(100%);
   }
 }
 
 /* DESKTOP (1440px and up) */
-@media (min-width: 1440px) {}
+@media (min-width: 1440px) {
+  button {
+    right: 4px;
+  }
+}

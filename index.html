@@ -8,36 +8,42 @@
     <link rel="icon" type="image/png" href="./icons/favicon.png">
     <link rel="stylesheet" href="./styles/style.css">
 
-    <title>Pod request access landing page</title>
+    <title>Pod request access</title>
   </head>
 
   <body>
     <main>
-      <section id="main-content">
-        <div class="logo-container">
-          <img src="./icons/logo.svg" alt="Pod logo" id="logo">
-        </div>
-        <div class="text-content">
-          <h1>Publish your podcasts <span>everywhere.</span></h1>
-          <p>
-            Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify,
-            Apple Podcasts, Google Podcasts, Pocket Casts and more!
-          </p>
-        </div>
-        <div class="logos-container">
-          <img src="./icons/spotify.svg" alt="Spotify logo" class="podcast-logo">
-          <img src="./icons/apple-podcast.svg" alt="Apple Podcasts logo" class="podcast-logo">
-          <img src="./icons/google-podcasts.svg" alt="Google Podcasts logo" class="podcast-logo">
-          <img src="./icons/pocket-casts.svg" alt="Pocket Casts logo" class="podcast-logo">
-        </div>
-        <div class="form-container">
-          <form id="request-access-form">
-            <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required>
-            <button type="submit">Request Access</button>
-          </form>
-        </div>
-        <img src="./icons/bg-pattern-dots.svg" alt="background pattern dots" id="bg-pattern-dots">
-      </section>
+      <div class="image-overlay-container">
+        <picture>
+          <source media="(min-width: 1440px)" srcset="./images/desktop/image-host.jpg">
+          <source media="(min-width: 768px)" srcset="./images/tablet/image-host.jpg">
+          <img src="./images/mobile/image-host.jpg" alt="Podcast host talking to a mic">
+        </picture>
+      </div>
+      <div class="logo-container">
+        <img src="./icons/logo.svg" alt="Pod logo" id="logo">
+      </div>
+      <div class="text-content">
+        <h1>Publish your podcasts <span>everywhere.</span></h1>
+        <p>
+          Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify,
+          Apple Podcasts, Google Podcasts, Pocket Casts and more!
+        </p>
+      </div>
+      <div class="logos-container">
+        <img src="./icons/spotify.svg" alt="Spotify logo" class="podcast-logo">
+        <img src="./icons/apple-podcast.svg" alt="Apple Podcasts logo" class="podcast-logo">
+        <img src="./icons/google-podcasts.svg" alt="Google Podcasts logo" class="podcast-logo">
+        <img src="./icons/pocket-casts.svg" alt="Pocket Casts logo" class="podcast-logo">
+      </div>
+      <div class="background-overlay"></div>
+      <div class="form-container">
+        <form id="request-access-form">
+          <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required>
+          <button type="submit">Request Access</button>
+        </form>
+      </div>
+      <img src="./icons/bg-pattern-dots.svg" alt="background pattern dots" class="bg-pattern-dots">
     </main>
   </body>
 
