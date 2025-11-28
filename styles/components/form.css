@@ -63,6 +63,27 @@ button:hover {
   box-shadow: 0 2px 4px 0 rgba(84, 230, 175, 0.14);
 }
 
+.input-error {
+  border: 2px solid var(--color-red);
+}
+
+.error-message {
+  /* typography */
+  font-family: var(--font-family-regular);
+  font-size: var(--font-size-desktop-text-preset-4);
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-red);
+  /* layout */
+  margin-left: 32px;
+  width: 100%;
+}
+
+.error-message.hide-text {
+  color: var(--color-blue-950);
+  /* Same as background color */
+}
+
 /* TABLET (768px and up) */
 @media (min-width: 768px) {
   .form-container form {
@@ -74,7 +95,7 @@ button:hover {
 
   input {
     height: 52px;
-    padding: 12px 32px;
+    padding: 12px 25px;
   }
 
   button {
@@ -82,7 +103,7 @@ button:hover {
     padding: 8px var(--spacing-400);
     /* position */
     position: absolute;
-    top: 0;
+    top: -11px;
     right: 0;
     transform: translateY(100%);
   }
