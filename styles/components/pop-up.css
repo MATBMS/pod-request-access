@@ -1,0 +1,28 @@
+.success-popup {
+  /* layout */
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+  z-index: 1000;
+  padding: 8px var(--spacing-500);
+  /* style */
+  border-radius: 5px;
+  background: var(--color-green);
+  box-shadow: 0 2px 4px 0 rgba(84, 230, 175, 0.14);
+  /* typography */
+  font-family: var(--font-family-regular);
+  font-size: var(--font-size-desktop-text-preset-3);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 200%;
+  color: var(--color-blue-950);
+}
+
+/* Animation classes */
+.popup-enter {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+.popup-exit {
+  animation: slideOutRight 0.3s ease-in forwards;
+}
