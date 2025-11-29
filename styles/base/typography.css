@@ -3,16 +3,19 @@
 @font-face {
   font-family: 'Chivo';
   src: url('../../fonts/Chivo.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Chivo Light';
   src: url('../../fonts/Chivo-Light.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Chivo Extra Light';
   src: url('../../fonts/Chivo-ExtraLight.ttf') format('truetype');
+  font-display: swap;
 }
 
 /* VARIABLES */

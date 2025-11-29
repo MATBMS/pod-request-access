@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div class="success-popup hide">
+    <div class="success-popup hide" role="status" aria-live="polite" aria-atomic="true">
       <span class="popup-message">Email submitted successfully!</span>
     </div>
     <main>
@@ -41,9 +41,11 @@
       </div>
       <div class="background-overlay"></div>
       <div class="form-container">
-        <form id="request-access-form">
-          <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required>
-          <span class="error-message hide-text">Oops! Please check your email</span>
+        <form id="request-access-form" novalidate>
+          <label for="email" class="sr-only">Email address</label>
+          <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required
+            aria-describedby="email-error" aria-invalid="false">
+          <span id="email-error" class="error-message hide-text" role="alert">Oops! Please check your email</span>
           <button type="submit">Request Access</button>
         </form>
       </div>

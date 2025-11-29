@@ -1,35 +1,41 @@
 // variables declaration
-const emailInput = document.querySelector('input');
-const submitButton = document.querySelector('button');
+const form = document.getElementById('request-access-form');
+const emailInput = document.getElementById('email');
 const errorMessage = document.querySelector('.error-message');
 const successPopup = document.querySelector('.success-popup');
 
+// null checks for DOM elements
+if (!form || !emailInput || !errorMessage || !successPopup) {
+  console.error('Required DOM elements not found');
+  throw new Error('Required DOM elements not found');
+}
+
 // reset on focus
-emailInput.addEventListener('focus', function () {
+emailInput.addEventListener('focus', () => {
   emailInput.classList.toggle('input-error', false);
+  emailInput.setAttribute('aria-invalid', 'false');
   errorMessage.classList.add('hide-text');
 });
 
-// button handler
-submitButton.addEventListener('click', function (event) {
+// form submit handler
+form.addEventListener('submit', (event) => {
   // prevent default behavior
   event.preventDefault();
-  // handle value
-  const formValue = emailInput.value;
 
-  // validate email
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (emailRegex.test(formValue)) {
-    console.log(`${formValue} has been submitted!`);
+  // validate email using Constraint Validation API
+  if (emailInput.validity.valid) {
+    console.log(`${emailInput.value} has been submitted!`);
     // Show success popup
     showSuccessPopup();
     // reset form
     emailInput.value = '';
     emailInput.classList.remove('input-error');
+    emailInput.setAttribute('aria-invalid', 'false');
     errorMessage.classList.add('hide-text');
   } else {
-    console.error(`${formValue} invalid email!`);
+    console.error(`${emailInput.value} invalid email!`);
     emailInput.classList.add('input-error');
+    emailInput.setAttribute('aria-invalid', 'true');
     errorMessage.classList.remove('hide-text');
   }
 });

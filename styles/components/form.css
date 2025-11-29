@@ -20,7 +20,7 @@ input {
   border-radius: 999px;
   background: var(--color-blue-900);
   /* typography */
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family-regular);
   font-size: var(--font-size-desktop-text-preset-3);
   font-style: normal;
   font-weight: 700;
@@ -30,7 +30,7 @@ input {
 
 input::placeholder {
   /* typography */
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family-regular);
   font-size: var(--font-size-desktop-text-preset-3);
   font-style: normal;
   font-weight: 700;
@@ -80,8 +80,7 @@ button:hover {
 }
 
 .error-message.hide-text {
-  color: var(--color-blue-950);
-  /* Same as background color */
+  visibility: hidden;
 }
 
 /* TABLET (768px and up) */
