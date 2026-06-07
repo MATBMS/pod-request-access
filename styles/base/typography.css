@@ -1,0 +1,51 @@
+/* ──────────────────────────────────────────
+   Typography
+   Loads the page font from local files and exposes
+   the text presets defined in the style guide.
+   ────────────────────────────────────────── */
+
+@font-face {
+  font-family: "Chivo";
+  src: url("../../fonts/chivo/Chivo-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chivo";
+  src: url("../../fonts/chivo/Chivo-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Page-wide default = Text Preset 2 (body) */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-preset-2);
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-preset-2);
+  color: var(--color-blue-300);
+}
+
+.text-preset-1 {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-preset-1);
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-preset-1);
+}
+
+.text-preset-2 {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-preset-2);
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-preset-2);
+}
+
+.text-preset-3 {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-preset-3);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-preset-3);
+}
