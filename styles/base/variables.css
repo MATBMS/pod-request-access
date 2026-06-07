@@ -26,11 +26,19 @@
   --space-1100: 88px;
   --space-1300: 104px;
 
-  /* Typography */
+  /* Radius */
+  --radius-pill: 28px; /* at the element heights here this reads as a full pill */
+
+  /* Effects */
+  --color-green-hover: #aaf3d7; /* green + 50% white overlay (Figma hover state) */
+
+  /* Typography
+     Mobile-first: preset-1/2 hold their MOBILE sizes here and are bumped
+     up at the desktop breakpoint (48px / 18px) in a later pass. */
   --font-family-base: "Chivo", sans-serif;
 
-  --font-size-preset-1: 48px;
-  --font-size-preset-2: 18px;
+  --font-size-preset-1: 32px;
+  --font-size-preset-2: 14px;
   --font-size-preset-3: 14px;
 
   --font-weight-light: 300;
@@ -39,4 +47,12 @@
   --line-height-preset-1: 1.2;
   --line-height-preset-2: 1.5;
   --line-height-preset-3: 2;
+}
+
+/* From tablet up, preset-1/2 grow to their larger sizes (also used at desktop). */
+@media (min-width: 768px) {
+  :root {
+    --font-size-preset-1: 48px;
+    --font-size-preset-2: 18px;
+  }
 }

@@ -1,0 +1,44 @@
+/* ──────────────────────────────────────────
+   Brand logos
+   Row of partner platform wordmarks. Each logo keeps its own
+   aspect ratio; widths mirror the (uniformly scaled) Figma sizes.
+   ────────────────────────────────────────── */
+
+.brand-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-200);
+  width: 100%;
+  list-style: none;
+}
+
+.brand-logos img {
+  width: 100%;
+  height: auto;
+}
+
+/* Different wordmark widths so they read at a consistent visual weight. */
+.brand-logos li:nth-child(1) { width: 56px; } /* Spotify */
+.brand-logos li:nth-child(2) { width: 45px; } /* Apple Podcast */
+.brand-logos li:nth-child(3) { width: 76px; } /* Google Podcasts */
+.brand-logos li:nth-child(4) { width: 76px; } /* Pocket Casts */
+
+/* Tablet+: logos sit at natural size, left-aligned with a fixed gap. */
+@media (min-width: 768px) {
+  .brand-logos {
+    justify-content: flex-start;
+    gap: var(--space-500);
+    width: auto;
+  }
+
+  /* :nth-child(n) matches every item at the same specificity as the
+     mobile per-logo widths above, so this override actually wins. */
+  .brand-logos li:nth-child(n) {
+    width: auto;
+  }
+
+  .brand-logos img {
+    width: auto;
+  }
+}

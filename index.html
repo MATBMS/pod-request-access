@@ -10,11 +10,52 @@
   <title>Pod request access landing page</title>
 </head>
 <body>
-  Publish your podcasts everywhere.
+  <main class="page">
+    <div class="page__bg" aria-hidden="true"></div>
+    <img class="page__dots" src="./icons/bg-pattern-dots.svg" alt="" aria-hidden="true">
 
-  Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, 
-  Apple Podcasts, Google Podcasts, Pocket Casts and more!
+    <div class="page__inner">
+      <img class="page__logo" src="./images/logo.svg" alt="pod" width="135" height="56">
 
-  Request access
+      <div class="hero">
+        <div class="hero__text">
+          <h1 class="hero__title text-preset-1">
+            <span class="hero__title-accent">Publish your podcasts</span> everywhere.
+          </h1>
+          <p class="hero__body text-preset-2">
+            Upload your audio to Pod with a single click. We’ll then distribute
+            your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts
+            and more!
+          </p>
+        </div>
+
+        <ul class="brand-logos">
+          <li><img src="./icons/spotify.svg" alt="Spotify"></li>
+          <li><img src="./icons/apple-podcast.svg" alt="Apple Podcast"></li>
+          <li><img src="./icons/google-podcasts.svg" alt="Google Podcasts"></li>
+          <li><img src="./icons/pocket-casts.svg" alt="Pocket Casts"></li>
+        </ul>
+
+        <form class="signup-form">
+          <div class="signup-form__field">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input
+              class="signup-form__input text-preset-3"
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="Email address"
+              aria-describedby="email-error"
+            >
+            <button class="button signup-form__button text-preset-3" type="submit">
+              Request Access
+            </button>
+          </div>
+          <p class="signup-form__error" id="email-error">Oops! Please check your email</p>
+        </form>
+      </div>
+    </div>
+  </main>
 </body>
 </html>

@@ -1,0 +1,22 @@
+/* ──────────────────────────────────────────
+   Button
+   Green pill button used for the call to action.
+   ────────────────────────────────────────── */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-100) var(--space-400);
+  color: var(--color-blue-950);
+  background-color: var(--color-green);
+  border: none;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 4px rgba(84, 230, 175, 0.14);
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--color-green-hover);
+}

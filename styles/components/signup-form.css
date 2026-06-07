@@ -1,0 +1,106 @@
+/* ──────────────────────────────────────────
+   Signup form
+   .signup-form is the vertical wrapper (field + error message).
+   .signup-form__field holds the input + button — stacked on mobile,
+   a single pill on tablet/desktop.
+   ────────────────────────────────────────── */
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  width: 100%;
+}
+
+.signup-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  width: 100%;
+}
+
+.signup-form__input {
+  width: 100%;
+  padding: var(--space-100) var(--space-400); /* 8px + line-height = 44px tall pill */
+  color: var(--color-white);
+  background-color: var(--color-blue-900);
+  border: none;
+  border-radius: var(--radius-pill);
+}
+
+.signup-form__input::placeholder {
+  color: var(--color-white);
+  opacity: 0.5;
+}
+
+.signup-form__input:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 2px;
+}
+
+.signup-form__button {
+  width: 100%;
+}
+
+/* Error state — driven by aria-invalid="true" on the input, which the
+   form-validation JS (a later step) will toggle. Hidden until then. */
+.signup-form__error {
+  display: none;
+  color: var(--color-red);
+  font-weight: var(--font-weight-bold);
+  font-size: 12px; /* one-off size, not in the preset scale */
+  line-height: normal;
+  text-align: center;
+}
+
+/* Mobile: the input is its own pill, so it carries the red border. */
+.signup-form__input[aria-invalid="true"] {
+  box-shadow: 0 0 0 2px var(--color-red); /* red border, no layout shift */
+}
+
+.signup-form:has(.signup-form__input[aria-invalid="true"]) .signup-form__error {
+  display: block;
+}
+
+/* Tablet+: input and button share one pill. */
+@media (min-width: 768px) {
+  .signup-form {
+    width: 448px;
+  }
+
+  .signup-form__field {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: var(--space-50); /* 4px frame around the inner button */
+    background-color: var(--color-blue-900);
+    border-radius: var(--radius-pill);
+  }
+
+  .signup-form__input {
+    flex: 1;
+    min-width: 0; /* let the input shrink inside the flex row */
+    width: auto;
+    padding-block: 0;
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  .signup-form__button {
+    width: auto;
+  }
+
+  /* Error: the pill (field) carries the red border now, not the input. */
+  .signup-form__input[aria-invalid="true"] {
+    box-shadow: none;
+  }
+
+  .signup-form__field:has(.signup-form__input[aria-invalid="true"]) {
+    box-shadow: 0 0 0 2px var(--color-red);
+  }
+
+  .signup-form__error {
+    padding-left: var(--space-400); /* 32px — align under the input text */
+    text-align: left;
+  }
+}
