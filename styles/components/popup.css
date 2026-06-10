@@ -1,0 +1,44 @@
+/* ──────────────────────────────────────────
+   Confirmation popup (toast)
+   Shown by feat-01 on a valid submit; hidden via the [hidden] attribute
+   until JS reveals it. Visual values are this story's proposal using the
+   existing design tokens (deferred constraint — review welcome).
+   ────────────────────────────────────────── */
+
+.popup {
+  position: fixed;
+  top: var(--space-500);
+  left: var(--space-500);
+  z-index: 10;
+
+  max-width: min(90vw, 400px);
+  padding: var(--space-200) var(--space-300);
+
+  color: var(--color-white);
+  background-color: var(--color-blue-900);
+  border: 2px solid var(--color-green);
+  border-radius: 12px; /* one-off — the only radius token (28px pill) is too round for a multi-line box */
+  box-shadow: 0 8px 24px rgba(18, 23, 37, 0.5); /* blue-950 @ 50% */
+
+  text-align: center;
+
+  /* Gentle entrance on reveal. */
+  animation: popup-in 200ms ease-out;
+}
+
+@keyframes popup-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--space-100)));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popup {
+    animation: none;
+  }
+}

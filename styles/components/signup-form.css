@@ -33,9 +33,21 @@
   opacity: 0.5;
 }
 
+/* Mobile: the input is its own pill, so the focus ring sits on the input. */
 .signup-form__input:focus-visible {
   outline: 2px solid var(--color-green);
   outline-offset: 2px;
+}
+
+/* Chrome paints a pale background on autofilled inputs that can't be undone
+   with background-color. An inset box-shadow paints over it; text-fill-color
+   keeps the typed text white. Matches the pill colour at every breakpoint. */
+.signup-form__input:-webkit-autofill,
+.signup-form__input:-webkit-autofill:hover,
+.signup-form__input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-blue-900) inset;
+  -webkit-text-fill-color: var(--color-white);
+  caret-color: var(--color-white);
 }
 
 .signup-form__button {
@@ -88,6 +100,16 @@
 
   .signup-form__button {
     width: auto;
+  }
+
+  /* Focus: the pill (field) carries the ring now, not the square input. */
+  .signup-form__field:has(.signup-form__input:focus-visible) {
+    outline: 2px solid var(--color-green);
+    outline-offset: 2px;
+  }
+
+  .signup-form__input:focus-visible {
+    outline: none;
   }
 
   /* Error: the pill (field) carries the red border now, not the input. */
