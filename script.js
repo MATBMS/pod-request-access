@@ -18,6 +18,17 @@ const CONFIRMATION_MESSAGE =
 // for the malformed case (feat-03); the empty case overrides it at submit time.
 const EMPTY_EMAIL_MESSAGE = "Oops! Please add your email";
 
+// feat-03 — malformed-email rejection copy. Matches the HTML's default
+// #email-error string, but we set it explicitly so a prior empty error can't
+// leave the wrong message on screen.
+const MALFORMED_EMAIL_MESSAGE = "Oops! Please check your email";
+
+// feat-03 — shape-based format check (see the spec's Data section). Not
+// RFC-complete by design: local@domain.tld, no spaces, a single @. The form is
+// `novalidate`, so this regex — not the browser's native type="email" bubble —
+// is the sole gate, which lets us surface our own message.
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 // Deferred constraint: 4s sits in the approved 3–5s range.
 const POPUP_DURATION_MS = 4000;
 
@@ -33,16 +44,19 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  // Malformed email is feat-03's branch — for now a bad format just stops
-  // short of the confirmation without surfacing its own message yet.
-  if (!input.checkValidity()) return;
+  // Non-empty but badly formatted → feat-03's branch.
+  if (!EMAIL_PATTERN.test(email)) {
+    showMalformedError();
+    return;
+  }
 
   showConfirmation();
 });
 
-// Recovery: clear the empty-field error as soon as a real value is typed.
-// Whitespace-only still counts as empty (AC #1), so guard on trim(). This only
-// ever clears — the error is raised on submit, never re-raised mid-typing.
+// Recovery: clear whichever submit error is showing (empty → feat-02, malformed
+// → feat-03) as soon as a real value is typed. Whitespace-only still counts as
+// empty, so guard on trim(). This only ever clears — errors are raised on submit,
+// never re-raised mid-typing.
 input.addEventListener("input", () => {
   if (input.value.trim() !== "") {
     input.removeAttribute("aria-invalid");
@@ -54,6 +68,13 @@ function showEmptyError() {
   // border and reveal #email-error; setting the copy is all that's left.
   input.setAttribute("aria-invalid", "true");
   errorMessage.textContent = EMPTY_EMAIL_MESSAGE;
+}
+
+function showMalformedError() {
+  // Same aria-invalid hook as the empty case; only the copy differs. Set it
+  // explicitly so a previous empty-error message can't linger.
+  input.setAttribute("aria-invalid", "true");
+  errorMessage.textContent = MALFORMED_EMAIL_MESSAGE;
 }
 
 function showConfirmation() {
