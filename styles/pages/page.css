@@ -5,7 +5,7 @@
 
 .page {
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   max-width: 1440px; /* the design frame width */
   margin-inline: auto; /* centre it, with equal margins on wide screens */
   overflow: hidden; /* clip the bleeding background image */
@@ -36,7 +36,7 @@
   justify-content: center;
   gap: var(--space-700);
   max-width: 480px;
-  min-height: 100vh;
+  min-height: 100svh;
   margin-inline: auto;
   padding: 36px;
 }

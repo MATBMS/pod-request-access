@@ -30,13 +30,20 @@ This is a solution to the [Pod request access landing page challenge on Frontend
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 
 ### Extra feature
 
-As a User,<br>
-I need to be able to [...],<br>
-So that I can [...].
+As a first-time visitor,<br>
+I want visible confirmation after I submit a valid email,<br>
+so that I know my submission was registered and understand this is a learning demo.
 
 ### What I learned
+
+I learned how to use a **regular expression (regex)** to validate an email address. Because the form is marked `novalidate`, the browser's built-in `type="email"` check is turned off, so this pattern is the sole gate before showing the confirmation:
+
+```js
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+```
+
+Reading it left to right: one or more characters that aren't a space or `@`, then a literal `@`, then more non-space/non-`@` characters, a literal `.`, and a final chunk — i.e. `local@domain.tld`. It's a deliberately simple shape check rather than a fully RFC-compliant validator, which keeps it readable and lets me surface my own error message instead of the browser's default bubble.

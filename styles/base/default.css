@@ -5,7 +5,7 @@
 
 body {
   background-color: var(--color-blue-950);
-  min-height: 100vh;
+  min-height: 100svh;
 }
 
 /* Visually hide an element while keeping it available to screen readers.
